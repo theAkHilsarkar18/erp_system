@@ -56,7 +56,22 @@ class _AddStudentPageState extends State<AddStudentPage> {
 
               GestureDetector(
                 onTap: () {
-                  Navigator.pop(context);
+                  Map student = {
+                    'id': txtId.text,
+                    'name': txtName.text,
+                    'age': txtAge.text,
+                    'phone': txtPhone.text,
+                    'course': txtCourse.text,
+                    'address': txtAddress.text,
+                  };
+                  studentsList.add(student);
+                  Navigator.of(context).pushReplacementNamed('/');
+                  txtName.clear();
+                  txtAge.clear();
+                  txtAddress.clear();
+                  txtId.clear();
+                  txtCourse.clear();
+                  txtPhone.clear();
                 },
                 child: Container(
                   alignment: Alignment.center,

@@ -1,6 +1,9 @@
 import 'package:erp_system/screens/add_student_page.dart';
+import 'package:erp_system/screens/detail_page.dart';
 import 'package:erp_system/screens/home_page.dart';
 import 'package:flutter/material.dart';
+
+// TODO of Today : add student detail and show in home page,open detail page on click,code structured
 
 // TODO: 3. ERP System - Student Management System
 // -> TODO: CRUD Operation - Create,Read,Update,Delete
@@ -19,6 +22,7 @@ void main()
 }
 
 class ERPSystem extends StatelessWidget {
+
   const ERPSystem({super.key});
 
   @override
@@ -28,6 +32,7 @@ class ERPSystem extends StatelessWidget {
       routes: {
         '/' : (context)=> const HomePage(),
         '/add' : (context)=> const AddStudentPage(),
+        '/detail' : (context)=> const DetailPage(),
       },
     );
   }
