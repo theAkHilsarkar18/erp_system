@@ -99,15 +99,19 @@ class _HomePageState extends State<HomePage> {
                             fontWeight: FontWeight.w500,
                             letterSpacing: 1),
                       ),
-                      Text(
-                        studentsList[index]['course'],
-                        style: TextStyle(
+                      SizedBox(
+                        width: 250,
+                        child: Text(
+                          studentsList[index]['course'],
+                          style: TextStyle(
                             color: black,
                             fontSize: 15,
+                            overflow: TextOverflow.ellipsis,
                             fontWeight: FontWeight.w500,
-                            letterSpacing: 1),
+                            letterSpacing: 1,
+                          ),
+                        ),
                       ),
-
                     ],
                   ),
                 ),

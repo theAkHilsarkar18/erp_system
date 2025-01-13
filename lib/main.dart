@@ -1,5 +1,6 @@
 import 'package:erp_system/screens/add_student_page.dart';
 import 'package:erp_system/screens/detail_page.dart';
+import 'package:erp_system/screens/edit_page.dart';
 import 'package:erp_system/screens/home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -33,6 +34,7 @@ class ERPSystem extends StatelessWidget {
         '/' : (context)=> const HomePage(),
         '/add' : (context)=> const AddStudentPage(),
         '/detail' : (context)=> const DetailPage(),
+        '/edit' : (context)=> const EditPage(),
       },
     );
   }

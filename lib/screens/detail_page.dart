@@ -35,7 +35,14 @@ class _DetailPageState extends State<DetailPage> {
         ),
         actions: [
           IconButton(onPressed: () {
-            
+            txtId = TextEditingController(text: studentsList[listIndex]['id']);
+            txtName = TextEditingController(text: studentsList[listIndex]['name']);
+            txtAge = TextEditingController(text: studentsList[listIndex]['age']);
+            txtPhone = TextEditingController(text: studentsList[listIndex]['phone']);
+            txtCourse = TextEditingController(text: studentsList[listIndex]['course']);
+            txtAddress = TextEditingController(text: studentsList[listIndex]['address']);
+
+            Navigator.of(context).pushNamed('/edit');
           }, icon: Icon(Icons.edit,color: bgColor,)),
 
           IconButton(onPressed: () {

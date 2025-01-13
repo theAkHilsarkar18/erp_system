@@ -1,33 +1,38 @@
-import 'package:erp_system/utils.dart';
 import 'package:flutter/material.dart';
 
 import '../colors.dart';
+import '../utils.dart';
+import 'add_student_page.dart';
 
-class AddStudentPage extends StatefulWidget {
-  const AddStudentPage({super.key});
+class EditPage extends StatefulWidget {
+  const EditPage({super.key});
 
   @override
-  State<AddStudentPage> createState() => _AddStudentPageState();
+  State<EditPage> createState() => _EditPageState();
 }
 
-class _AddStudentPageState extends State<AddStudentPage> {
+class _EditPageState extends State<EditPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: bgColor,
       appBar: AppBar(
         leading: IconButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            icon: Icon(
-              Icons.arrow_back,
-              color: bgColor,
-            )),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(
+            Icons.arrow_back,
+            color: bgColor,
+          ),
+        ),
         title: Text(
-          'Add Student',
+          'Edit Page',
           style: TextStyle(
-              color: bgColor, fontWeight: FontWeight.w600, letterSpacing: 1),
+            color: bgColor,
+            fontWeight: FontWeight.w600,
+            letterSpacing: 1,
+          ),
         ),
         backgroundColor: primary,
       ),
@@ -36,15 +41,15 @@ class _AddStudentPageState extends State<AddStudentPage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-             Container(
-               height: 120,
-               width: 120,
-               decoration: BoxDecoration(
-                 color: bgColor,
-                 border: Border.all(color: primary,width: 2),
-                 shape: BoxShape.circle
-               ),
-             ),
+              Container(
+                height: 120,
+                width: 120,
+                decoration: BoxDecoration(
+                    color: bgColor,
+                    border: Border.all(color: primary,width: 2),
+                    shape: BoxShape.circle
+                ),
+              ),
               SizedBox(height: 20,),
               inputBox(label: 'ID',txtController: txtId),
               inputBox(label: 'Name',txtController: txtName),
@@ -64,7 +69,7 @@ class _AddStudentPageState extends State<AddStudentPage> {
                     'course': txtCourse.text,
                     'address': txtAddress.text,
                   };
-                  studentsList.add(student);
+                  studentsList[listIndex] = student;
                   Navigator.of(context).pushReplacementNamed('/');
                   // txtName.clear();
                   // txtAge.clear();
@@ -82,7 +87,7 @@ class _AddStudentPageState extends State<AddStudentPage> {
                     color: primary,
                     borderRadius: BorderRadius.circular(5),
                   ),
-                  child: Text('Add Student',style: TextStyle(color: bgColor,fontWeight: FontWeight.w500,letterSpacing: 1,fontSize: 20,),),
+                  child: Text('Update Student',style: TextStyle(color: bgColor,fontWeight: FontWeight.w500,letterSpacing: 1,fontSize: 20,),),
                 ),
               ),
             ],
@@ -91,35 +96,4 @@ class _AddStudentPageState extends State<AddStudentPage> {
       ),
     );
   }
-}
-
-
-Widget inputBox({required String label,required TextEditingController txtController})
-{
-  return Padding(
-    padding: const EdgeInsets.all(8.0),
-    child: TextField(
-      controller: txtController,
-      cursorColor: primary,
-      style: TextStyle(
-        color: black,
-        fontWeight: FontWeight.w500,
-        letterSpacing: 1,
-        fontSize: 18,
-      ),
-      decoration: InputDecoration(
-        labelText: label,
-        labelStyle: TextStyle(
-          color: primary,
-          fontWeight: FontWeight.w500,
-          letterSpacing: 1,
-          fontSize: 18,
-        ),
-        enabledBorder:
-        OutlineInputBorder(borderSide: BorderSide(color: primary)),
-        focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: primary, width: 1.5)),
-      ),
-    ),
-  );
 }
