@@ -67,7 +67,9 @@ class _HomePageState extends State<HomePage> {
                   decoration: BoxDecoration(
                       color: bgColor,
                       border: Border.all(color: black, width: 1.5),
-                      shape: BoxShape.circle),
+                      shape: BoxShape.circle,
+                    image: DecorationImage(image: studentsList[index]['image']==null?NetworkImage(netImage):MemoryImage(studentsList[index]['image']))
+                  ),
                 ),
                 Padding(
                   padding:

@@ -7,15 +7,21 @@ import 'package:flutter/material.dart';
 // TODO of Today : add student detail and show in home page,open detail page on click,code structured
 
 // TODO: 3. ERP System - Student Management System
-// -> TODO: CRUD Operation - Create,Read,Update,Delete
-// -> TODO: Add Student - id,name,course,age,photo,address,phone,...
+// -> CRUD Operation - Create,Read,Update,Delete
+// ->  Add Student - id,name,course,age,photo,address,phone,...
 //      -> FAB>New Add Page>Form>Home:Added
 
-// -> TODO: Show all students detail in Home Page
-// -> TODO: Also create detail page for each students.
-// -> TODO: Update all details of students
-// -> TODO: delete all details of students
+// ->  Show all students detail in Home Page
+// -> Also create detail page for each students.
+// -> Update all details of students
+// -: delete all details of students
 // -> TODO: search by ID.
+// -> TODO: Image: onclick -> gallery
+// -> TODO: PDF.
+
+// Package --> collection of code of specific feature,
+// Flutter SDK : UI Framework : Dart : pub.dev
+// pubspec.yaml : data entry : package,image,mp3,video,
 
 void main()
 {

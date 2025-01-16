@@ -1,5 +1,8 @@
+import 'dart:typed_data';
+
 import 'package:erp_system/utils.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../colors.dart';
 
@@ -36,13 +39,29 @@ class _AddStudentPageState extends State<AddStudentPage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-             Container(
-               height: 120,
-               width: 120,
-               decoration: BoxDecoration(
-                 color: bgColor,
-                 border: Border.all(color: primary,width: 2),
-                 shape: BoxShape.circle
+             GestureDetector(
+               onTap: () async {
+                 // create object of image picker
+                 ImagePicker imagePicker = ImagePicker();
+                 // access pickImage method-feature by object - gallery
+                 // wait -> photo -->
+                 XFile? xFile =  await imagePicker.pickImage(source: ImageSource.gallery);
+                 photo = await xFile!.readAsBytes();
+                 print(photo);
+                 setState(() {
+
+                 });
+
+                 },
+               child: Container(
+                 height: 120,
+                 width: 120,
+                 decoration: BoxDecoration(
+                   color: bgColor,
+                   border: Border.all(color: primary,width: 2),
+                   shape: BoxShape.circle,
+                   image: DecorationImage(image: photo==null?NetworkImage(netImage):MemoryImage(photo!)),
+                 ),
                ),
              ),
               SizedBox(height: 20,),
@@ -63,9 +82,11 @@ class _AddStudentPageState extends State<AddStudentPage> {
                     'phone': txtPhone.text,
                     'course': txtCourse.text,
                     'address': txtAddress.text,
+                    'image' : photo,
                   };
                   studentsList.add(student);
                   Navigator.of(context).pushReplacementNamed('/');
+                  photo = null;
                   // txtName.clear();
                   // txtAge.clear();
                   // txtAddress.clear();
