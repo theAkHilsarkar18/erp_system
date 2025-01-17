@@ -16,8 +16,10 @@ import 'package:flutter/material.dart';
 // -> Update all details of students
 // -: delete all details of students
 // -> TODO: search by ID.
-// -> TODO: Image: onclick -> gallery
+// -> Image: onclick -> gallery
 // -> TODO: PDF.
+
+// Bug(Problem in our app) Bounties ->
 
 // Package --> collection of code of specific feature,
 // Flutter SDK : UI Framework : Dart : pub.dev
@@ -45,3 +47,6 @@ class ERPSystem extends StatelessWidget {
     );
   }
 }
+
+// 100
+
