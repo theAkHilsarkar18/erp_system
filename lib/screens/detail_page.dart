@@ -49,6 +49,12 @@ class _DetailPageState extends State<DetailPage> {
             studentsList.removeAt(listIndex);
             Navigator.of(context).pushReplacementNamed('/');
           }, icon: Icon(Icons.delete,color: bgColor,)),
+          IconButton(onPressed: () {
+
+            //pdf --> ui -code
+            Navigator.of(context).pushNamed('/pdf');
+
+          }, icon: Icon(Icons.picture_as_pdf,color: bgColor,)),
         ],
         backgroundColor: primary,
       ),
@@ -61,7 +67,8 @@ class _DetailPageState extends State<DetailPage> {
             decoration: BoxDecoration(
                 color: bgColor,
                 border: Border.all(color: primary,width: 2),
-                shape: BoxShape.circle
+                shape: BoxShape.circle,
+              image: DecorationImage(image: studentsList[listIndex]['image']==null?NetworkImage(netImage):MemoryImage(studentsList[listIndex]['image']))
             ),
           ),
           ListTile(

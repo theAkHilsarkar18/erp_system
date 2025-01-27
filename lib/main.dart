@@ -1,3 +1,4 @@
+import 'package:erp_system/pdf/pdf_screen.dart';
 import 'package:erp_system/screens/add_student_page.dart';
 import 'package:erp_system/screens/detail_page.dart';
 import 'package:erp_system/screens/edit_page.dart';
@@ -15,9 +16,9 @@ import 'package:flutter/material.dart';
 // -> Also create detail page for each students.
 // -> Update all details of students
 // -: delete all details of students
-// -> TODO: search by ID.
+// -> search by ID.
 // -> Image: onclick -> gallery
-// -> TODO: PDF.
+// -> TODO: PDF.:
 
 // Bug(Problem in our app) Bounties ->
 
@@ -43,6 +44,7 @@ class ERPSystem extends StatelessWidget {
         '/add' : (context)=> const AddStudentPage(),
         '/detail' : (context)=> const DetailPage(),
         '/edit' : (context)=> const EditPage(),
+        '/pdf' : (context)=> const PdfScreen(),
       },
     );
   }
